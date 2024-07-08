@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <title>Login and Registration Forms</title>
+</head>
+
+<body>
+    <div class="container">
+        <% if (typeof username != 'undefined'){ %>
+        <div class="form-sesion">
+            <h1>Hola <%= username %></h1>
+            <h3>Panel de administración</h3>
+            <button id="close-session" class="submit-button">Cerrar sesión</button>
+        </div>
+        <% } %>
+        <% if (typeof username === 'undefined'){ %>
+        <div class="form">
+            <form id="login-form">
+                <h3>Login</h3>
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="username" required>
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" class="submit-button">Login</button>
+                <span>&nbsp;</span>
+            </form>
+            <p>No tienes cuenta? <button id="register-button" class="register-button">Register</button></p>
+        </div>
+        <% } %>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
